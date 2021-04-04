@@ -68,8 +68,9 @@ class Asbc5Corpus:
     def iter_files(self):
         basedir = self.corpus_basedir
         xmlfiles = chain((basedir/"ASBC_A").iterdir(),
-                        (basedir/"ASBC_B").iterdir())
+                        (basedir/"ASBC_B").iterdir())                        
         xmlfiles = filter(lambda x: x.suffix == ".xml", xmlfiles)
+        xmlfiles = sorted(list(xmlfiles))
         return xmlfiles
 
 
